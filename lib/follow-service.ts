@@ -17,16 +17,16 @@ export const getFollowedUsers = async () => {
         },
       },
       include: {
-        following: true,
-        // following: {
-        //   include: {
-        //     stream: {
-        //       select: {
-        //         isLive: true,
-        //       },
-        //     },
-        //   },
-        // },
+        following: {
+          include: {
+            stream: true,
+            // stream: {
+            //   select: {
+            //     isLive: true,
+            //   },
+            // },
+          },
+        },
       },
       // orderBy: [
       //   {
