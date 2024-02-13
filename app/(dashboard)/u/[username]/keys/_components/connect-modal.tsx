@@ -3,9 +3,9 @@
 import { toast } from "sonner";
 import { useState, useTransition, useRef, ElementRef } from "react";
 import { AlertTriangle } from "lucide-react";
-// import { IngressInput } from "livekit-server-sdk";
+import { IngressInput } from "livekit-server-sdk";
 
-// import { createIngress } from "@/actions/ingress";
+import { createIngress } from "@/actions/ingress";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -24,10 +24,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-// const RTMP = String(IngressInput.RTMP_INPUT);
-// const WHIP = String(IngressInput.WHIP_INPUT);
-const RTMP = "RTMP";
-const WHIP = "WHIP";
+const RTMP = String(IngressInput.RTMP_INPUT);
+const WHIP = String(IngressInput.WHIP_INPUT);
 
 type IngressType = typeof RTMP | typeof WHIP;
 
@@ -38,12 +36,12 @@ export const ConnectModal = () => {
 
   const onSubmit = () => {
     startTransition(() => {
-      //   createIngress(parseInt(ingressType))
-      //     .then(() => {
-      //       toast.success("Ingress created");
-      //       closeRef?.current?.click();
-      //     })
-      //     .catch(() => toast.error("Something went wrong"));
+      createIngress(parseInt(ingressType))
+        .then(() => {
+          toast.success("Ingress created");
+          closeRef?.current?.click();
+        })
+        .catch(() => toast.error("Something went wrong"));
     });
   };
 
