@@ -10,6 +10,7 @@ import { useChatSidebar } from "@/store/use-chat-sidebar";
 import { Chat, ChatSkeleton } from "./chat";
 import { ChatToggle } from "./chat-toggle";
 import { Header, HeaderSkeleton } from "./header";
+import { InfoCard } from "./info-card";
 interface StreamPlayerProps {
   user: User & { stream: Stream | null };
   stream: Stream;
@@ -53,13 +54,13 @@ export const StreamPlayer = ({
             isFollowing={isFollowing}
             name={stream.name}
           />
-          {/* <InfoCard
+          <InfoCard
             hostIdentity={user.id}
             viewerIdentity={identity}
             name={stream.name}
             thumbnailUrl={stream.thumbnailUrl}
           />
-          <AboutCard
+          {/* <AboutCard
             hostName={user.username}
             hostIdentity={user.id}
             viewerIdentity={identity}
