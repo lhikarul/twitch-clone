@@ -14,7 +14,7 @@ import { ChatVariant, useChatSidebar } from "@/store/use-chat-sidebar";
 import { ChatForm, ChatFormSkeleton } from "./chat-form";
 import { ChatList, ChatListSkeleton } from "./chat-list";
 import { ChatHeader, ChatHeaderSkeleton } from "./chat-header";
-// import { ChatCommunity } from "./chat-community";
+import { ChatCommunity } from "./chat-community";
 
 interface ChatProps {
   hostName: string;
@@ -85,13 +85,13 @@ export const Chat = ({
           />
         </>
       )}
-      {/* {variant === ChatVariant.COMMUNITY && (
+      {variant === ChatVariant.COMMUNITY && (
         <ChatCommunity
           viewerName={viewerName}
           hostName={hostName}
           isHidden={isHidden}
         />
-      )} */}
+      )}
     </div>
   );
 };
