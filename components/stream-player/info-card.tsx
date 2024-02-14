@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { Pencil } from "lucide-react";
 
-// import { Separator } from "@/components/ui/separator";
+import { Separator } from "@/components/ui/separator";
 
 import { InfoModal } from "./info-modal";
 
@@ -42,7 +42,7 @@ export const InfoCard = ({
           </div>
           <InfoModal initialName={name} initialThumbnailUrl={thumbnailUrl} />
         </div>
-        {/* <Separator /> */}
+        <Separator />
         <div className="p-4 lg:p-6 space-y-4">
           <div>
             <h3 className="text-sm text-muted-foreground mb-2">Name</h3>
