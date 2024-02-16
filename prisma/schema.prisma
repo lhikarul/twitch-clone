@@ -30,7 +30,9 @@ model User {
 
 model Follow {
   id String @id @default(uuid())
+  // 登入帳號的 ID
   followerId String
+  // 登入帳號所追蹤的 ID
   followingId String
 
   follower User @relation(name: "Following", fields: [followerId], references: [id], onDelete: Cascade)

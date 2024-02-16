@@ -23,6 +23,7 @@ export const getRecommended = async () => {
           },
           {
             NOT: {
+              // 不推薦已經追蹤的用戶
               followedBy: {
                 some: {
                   followerId: userId,
@@ -32,6 +33,7 @@ export const getRecommended = async () => {
           },
           {
             NOT: {
+              // 不推薦已經封鎖的用戶
               blocking: {
                 some: {
                   blockedId: userId,
