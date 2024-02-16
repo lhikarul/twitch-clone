@@ -19,7 +19,9 @@ model User {
   following Follow[] @relation("Following")
   followedBy Follow[] @relation("FollowedBy")
 
+  // 我封鎖的對象
   blocking Block[] @relation("Blocking")
+  // 帳戶被誰封鎖
   blockedBy Block[] @relation("BlockedBy")
 
   stream Stream?
@@ -48,7 +50,9 @@ model Follow {
 
 model Block {
   id String @id @default(uuid())
+  // 主動封鎖的帳戶
   blockerId String
+  // 被封鎖的帳戶
   blockedId String
 
   blocker User @relation(name: "Blocking", fields: [blockerId], references: [id], onDelete: Cascade)

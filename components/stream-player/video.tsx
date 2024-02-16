@@ -18,6 +18,7 @@ interface VideoProps {
 
 export default function Video({ hostName, hostIdentity }: VideoProps) {
   const connectionState = useConnectionState();
+
   const participant = useRemoteParticipant(hostIdentity);
   const tracks = useTracks([
     Track.Source.Camera,
